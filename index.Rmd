@@ -16,4 +16,16 @@ internal link: [about page](about.html)
 
 use html
 
-<img src="images/figure1.jpg" style="width:75%">
+<img src="images/figure1.jpg" style="width:50%">
+
+### Add code
+
+```{r}
+library(tidyverse)
+
+tibble(
+  x = 1:10,
+  y = x + 2
+)
+```
+
