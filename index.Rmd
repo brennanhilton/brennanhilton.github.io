@@ -12,7 +12,7 @@ And I can put all kinds of stuff on it!
 
 ### Add some links
 
-[google](https://www.google.com)
+[Google Scholar Profile](https://scholar.google.com/citations?user=K2-E4SEAAAAJ&hl=en&authuser=1)
 
 internal link: [about page](about.html)
 
