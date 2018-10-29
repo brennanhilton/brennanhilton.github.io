@@ -1,35 +1,12 @@
 ---
-title: "Holy cow!"
+title: "Brennan Baker"
 output:
   html_document:
     toc: true
     toc_float: true
 ---
 
-### I have a webpage!
+Brennan Baker is a PhD Candidate in the department of Environmental Health at Columbia University. He studies epigenetic mechanisms as a potential pathway mediating the effects of environmental exposures on human disease. His work is focused specifically on how these effects may be transmitted across generations and impact the health of children. He works at the intersection of molecular biology, epigenetics, and epidemiology to explore these questions.  
 
-And I can put all kinds of stuff on it!
 
-### Add some links
-
-[Google Scholar Profile](https://scholar.google.com/citations?user=K2-E4SEAAAAJ&hl=en&authuser=1)
-
-internal link: [about page](about.html)
-
-### Add images
-
-use html
-
-<img src="images/figure1.jpg" style="width:50%">
-
-### Add code
-
-```{r}
-library(tidyverse)
-
-tibble(
-  x = 1:10,
-  y = x + 2
-)
-```
-
+Before starting this work at Columbia, Brennan received his BA/MA degree in Biology from Wesleyan University, where he conducted research focused on the evolutionary implications of heritable, environmentally induced epigenetic changes in plants. His research showed that plant's may respond to a source of environmental stress by modifying their offspring in specific ways that increase evolutionary fitness under that stress. Moreover, environmentally induced DNA methylation changes were shown to medaite these changes in offspring development. 

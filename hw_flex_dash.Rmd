@@ -1,0 +1,74 @@
+---
+title: "bhb2128 flexdash"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(plotly)
+```
+
+
+```{r}
+nyc_airbnb = 
+  nyc_airbnb %>% 
+  mutate(rating = review_scores_location / 2) %>%
+  select(boro = neighbourhood_group, neighbourhood, rating, price, room_type,
+         latitude, longitude) %>%
+  filter(!is.na(rating))
+```
+
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Rating proportions by boro
+
+```{r}
+bar_plot = nyc_airbnb %>% 
+  mutate(rating = as.character(rating)) %>%
+  group_by(boro, rating) %>%
+  summarize(count = n()) %>%
+  group_by(boro) %>% 
+  mutate(sum = sum(count)) %>% 
+  mutate(proportion = count/sum) %>%
+  ggplot(aes(x = boro, y = proportion, fill = rating)) + 
+  geom_bar(width = 0.9, position = position_dodge(width=1.0), stat="identity") +
+  theme_bw()
+
+ggplotly(bar_plot)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Price by rating in Staten Island
+
+```{r}
+nyc_airbnb %>% 
+  filter(boro == "Staten Island") %>%
+  mutate(rating = as.character(rating)) %>% 
+  plot_ly(y = ~price, color = ~rating, type = "box")
+
+```
+
+### Airbnbs in Staten Island
+
+```{r}
+nyc_airbnb %>% 
+  filter(boro == "Staten Island") %>%
+  mutate(text_label = str_c("Price: $", price, '\nRating: ', rating)) %>% 
+  plot_ly(x = ~longitude, y = ~latitude, type = "scatter", mode = "markers",
+          alpha = 0.5, 
+          color = ~price,
+          text = ~text_label)
+```
+
+

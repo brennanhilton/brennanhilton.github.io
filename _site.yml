@@ -1,12 +1,14 @@
 name: "Yay internet!"
 output_dir: "."
 navbar:
-  title: "Home"
+  title: "Brennan Baker"
   right:
     - text: "Resume"
       href: Resume.html
     - text: "Google Scholar"
       href: https://scholar.google.com/citations?user=K2-E4SEAAAAJ&hl=en&authuser=1
+    - text: "Flexdash"
+      href: hw_flex_dash.html  
     - icon: fa-envelope fa-lg
       href: mailto:brennanhilton@gmail.com
     - icon: fa-github fa-lg

@@ -6,4 +6,56 @@ output:
     toc_float: true
 ---
 
-[Baker, Brennan H., Lars J. Berg, and Sonia E. Sultan. "Context-Dependent Developmental Effects of Parental Shade Versus Sun Are Mediated by DNA Methylation." Frontiers in plant science 9 (2018): 1251.](https://www.frontiersin.org/articles/10.3389/fpls.2018.01251/full)
+###Education
+
+PhD Candidate, Columbia University, New York, NY  
+MA, 2018, Wesleyan University, Middletown, CT  
+BA, 2017, Wesleyan University, Middletown, CT  
+
+###Honors
+
+May 2017: Phi Beta Kappa  
+Jan 2014: May 2017 Wesleyan University Dean’s list (7 semesters)  
+
+###Fellowships
+
+May – August 2016:	Wesleyan University Fellowship for Research in the Sciences  
+May – July 2015:	Wesleyan University Fellowship for Research in the Sciences  
+
+###Publications
+
+Baker, BH, Sultan, SE, Lopez-Ichikawa M, Waterman R, *submitted*. Transgenerational effects of parental light environment on progeny competitive performance and lifetime fitness. Philosophical Transactions of the Royal Society of London B: Biological Sciences.  
+
+[Baker, Brennan H., Lars J. Berg, and Sonia E. Sultan. "Context-Dependent Developmental Effects of Parental Shade Versus Sun Are Mediated by DNA Methylation." Frontiers in plant science 9 (2018): 1251.](https://www.frontiersin.org/articles/10.3389/fpls.2018.01251/full)  
+
+###Poster Presentations
+
+July 2016: Inheritance of Parental Shade Effects in Polygonum persicaria  
+Brennan H. Baker and Sonia E. Sultan  
+Wesleyan Summer Research Programs Poster Session  
+
+July 2015: Shade Induced Transgenerational Plasticity in Polygonum persicaria  
+Brennan H. Baker, Lars J. Berg, and Sonia E. Sultan  
+Wesleyan Summer Research Programs Poster Session  
+
+###Teaching Experience
+
+2017 – 2018: Graduate Teaching Assistant, Wesleyan University  
+Plant Form and Diversity (Biology 290) Fall 2017  
+
+2014 – 2016: Undergraduate Teaching Assistant, Wesleyan University  
+Principles of Biology I (Biology 181): Fall 2014, Fall 2015, Fall 2016  
+
+
+###Computer Skills
+
+R (statistics, graphing), Python (programming, graphing), JMP (statistics), Galaxy (RNAseq analysis)
+	
+###Laboratory Techniques
+
+DNA extraction, Gel electrophoresis, PCR, RT-qPCR, Experimental demethylation of plant DNA
+
+
+
+
+
