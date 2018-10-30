@@ -1,21 +1,20 @@
 ---
-title: "bhb2128 flexdash"
+title: "flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
-library(plotly)
 ```
 
 
-```{r}
+```{r tidy data}
 nyc_airbnb = 
   nyc_airbnb %>% 
   mutate(rating = review_scores_location / 2) %>%
@@ -31,7 +30,7 @@ Column {data-width=650}
 
 ### Rating proportions by boro
 
-```{r}
+```{r rating by boro plot}
 bar_plot = nyc_airbnb %>% 
   mutate(rating = as.character(rating)) %>%
   group_by(boro, rating) %>%
@@ -51,7 +50,7 @@ Column {data-width=350}
 
 ### Price by rating in Staten Island
 
-```{r}
+```{r price by rating plot}
 nyc_airbnb %>% 
   filter(boro == "Staten Island") %>%
   mutate(rating = as.character(rating)) %>% 
@@ -61,7 +60,7 @@ nyc_airbnb %>%
 
 ### Airbnbs in Staten Island
 
-```{r}
+```{r staten island airbnb plot}
 nyc_airbnb %>% 
   filter(boro == "Staten Island") %>%
   mutate(text_label = str_c("Price: $", price, '\nRating: ', rating)) %>% 
