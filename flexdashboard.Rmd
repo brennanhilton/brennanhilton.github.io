@@ -7,20 +7,21 @@ output:
 ---
 
 ```{r setup}
-library(flexdashboard)
 library(tidyverse)
+library(viridis)
 library(p8105.datasets)
+
 library(plotly)
 ```
 
 
 ```{r tidy data}
-nyc_airbnb = 
+airbnb = 
   nyc_airbnb %>% 
+  filter(!is.na(review_scores_location)) %>% 
   mutate(rating = review_scores_location / 2) %>%
   select(boro = neighbourhood_group, neighbourhood, rating, price, room_type,
-         latitude, longitude) %>%
-  filter(!is.na(rating))
+         latitude, longitude)
 ```
 
 
@@ -31,7 +32,7 @@ Column {data-width=650}
 ### Rating proportions by boro
 
 ```{r rating by boro plot}
-bar_plot = nyc_airbnb %>% 
+bar_plot = airbnb %>% 
   mutate(rating = as.character(rating)) %>%
   group_by(boro, rating) %>%
   summarize(count = n()) %>%
@@ -51,17 +52,23 @@ Column {data-width=350}
 ### Price by rating in Staten Island
 
 ```{r price by rating plot}
-nyc_airbnb %>% 
+# plotly gave me a y axis title, but I had to manually define the x axis title
+x <- list(
+  title = "rating"
+)
+
+airbnb %>% 
   filter(boro == "Staten Island") %>%
   mutate(rating = as.character(rating)) %>% 
-  plot_ly(y = ~price, color = ~rating, type = "box")
+  plot_ly(y = ~price, color = ~rating, type = "box") %>% 
+  layout(xaxis = x) # set x axis title, refering to x defined above
 
 ```
 
 ### Airbnbs in Staten Island
 
 ```{r staten island airbnb plot}
-nyc_airbnb %>% 
+airbnb %>% 
   filter(boro == "Staten Island") %>%
   mutate(text_label = str_c("Price: $", price, '\nRating: ', rating)) %>% 
   plot_ly(x = ~longitude, y = ~latitude, type = "scatter", mode = "markers",

@@ -3,8 +3,8 @@ output_dir: "."
 navbar:
   title: "Brennan Baker"
   right:
-    - text: "Flexdash"
-      href: hw_flex_dash.html
+    - text: "Flex dashboard"
+      href: flexdashboard.html
     - text: "Resume"
       href: Resume.html
     - text: "Google Scholar"
