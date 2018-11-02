@@ -3,6 +3,7 @@ title: "Brennan Baker"
 output:
   html_document
 ---
+<img src="images/sheep2.jpg" style="width:100%">
 
 Brennan Baker is a PhD Candidate in the department of Environmental Health at Columbia University. He studies epigenetic mechanisms as a potential pathway mediating the effects of environmental exposures on human disease. His work is focused specifically on how these effects may be transmitted across generations and impact the health of children. He works at the intersection of molecular biology, epigenetics, and epidemiology to explore these questions.  
 
