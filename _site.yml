@@ -10,7 +10,7 @@ navbar:
     - text: "Google Scholar"
       href: https://scholar.google.com/citations?user=K2-E4SEAAAAJ&hl=en&authuser=1
     - icon: fa-envelope fa-lg
-      href: mailto:brennanhilton@gmail.com
+      href: mailto:<bhb2128@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/brennanhilton
 output:
