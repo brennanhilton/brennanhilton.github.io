@@ -6,6 +6,12 @@ output:
     toc_float: true
 ---
 
+```{r fig.show = "animate"}
+
+
+```
+
+
 ###Education
 
 PhD Candidate, Columbia University, New York, NY  
@@ -54,8 +60,4 @@ R (statistics, graphing), Python (programming, graphing), JMP (statistics), Gala
 ###Laboratory Techniques
 
 DNA extraction, Gel electrophoresis, PCR, RT-qPCR, Experimental demethylation of plant DNA
-
-
-
-
 

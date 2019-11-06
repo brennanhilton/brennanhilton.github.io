@@ -1,10 +1,8 @@
 name: "Yay internet!"
 output_dir: "."
 navbar:
-  title: "Brennan Baker"
+  title: "Brennan H. Baker"
   right:
-    - text: "Flex dashboard"
-      href: flexdashboard.html
     - text: "Resume"
       href: Resume.html
     - text: "Google Scholar"
