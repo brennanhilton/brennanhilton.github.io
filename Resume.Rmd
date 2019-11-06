@@ -6,11 +6,6 @@ output:
     toc_float: true
 ---
 
-```{r fig.show = "animate"}
-
-
-```
-
 
 ###Education
 
