@@ -728,7 +728,13 @@ function toggle_visibility(id1) {
 </div>
 <div id="installation" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Installation</h1>
-<pre class="r"><code>if (!require(&quot;BiocManager&quot;, quietly = TRUE))
+<pre class="r"><code># Install from github
+library(devtools)
+install_github(&quot;brennanhilton/RNAseqCovarImpute&quot;)
+
+# Install from Bioconductor
+
+if (!require(&quot;BiocManager&quot;, quietly = TRUE))
     install.packages(&quot;BiocManager&quot;)
 
 BiocManager::install(&quot;RNAseqCovarImpute&quot;)</code></pre>
@@ -743,11 +749,11 @@ data(RNAseqCovarImpute_data)</code></pre>
 <div id="rnaseqcovarimpute-demonstration" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> RNAseqCovarImpute Demonstration</h1>
 <p>This package contains functions for imputing covariate data in RNA sequencing studies and conducting differential expression analysis using the limma-voom pipeline. The procedure is outlined below:</p>
-<p>1: Bin the genes into smaller groups (around 1 gene per 10 individuals in the study). For example, with 880 individuals we make bins of 88 genes.</p>
+<p>1: Bin the genes into smaller groups. The default is approximately 1 gene per 10 individuals in the study, but the user can specify a different ratio. For example, in a study with 500 participants and 10,000 genes, 200 bins of 50 genes would be created using the default ratio. When the total number of genes is not divisible by the bin size, the method flexibly creates bins of two different sizes. For example, if the same hypothetical study included 10,001 genes, 199 bins of 50 and 1 bin of 51 genes would be created.</p>
 <p>2: Use the first bin of genes plus all user-specified covariates in the predictor matrix to make N imputed data sets (using ‘mice’ R package).</p>
-<p>3: Run RNA-seq analysis on only the genes in this particular bin. The analysis is run on all N imputed data sets separately. The coefficients and standard errors are then combined with Rubin’s rules and P-values computed for this particular bin of genes.</p>
+<p>3: Run RNA-seq analysis on only the genes in this particular bin. The analysis is run on all N imputed data sets separately.</p>
 <p>4: Repeat steps 2 and 3 for all other gene bins.</p>
-<p>5: Combine results for all gene bins and compute FDR adjusted P-values.</p>
+<p>5: Pool results with Rubins’ rules to produce combined coefficients, combined standard errors, and P-values. Adjust P-values for false discovery rate (FDR).</p>
 <div id="bin-the-genes-into-smaller-groups" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> 1: Bin the genes into smaller groups</h2>
 <p>The get_gene_bin_intervals function returns a data frame of intervals that can be used to bin the DGE list. By default, number of bins and genes per bin are set so that each bin has approximately 1 gene per 10 individuals/samples in the data. The default gene bin size can be changed with the n argument.</p>
@@ -862,61 +868,61 @@ example_DGE &lt;- example_DGE[annot, ]</code></pre>
 <td align="left">ENS432</td>
 <td align="right">-0.021</td>
 <td align="right">0.000</td>
-<td align="right">0.064</td>
+<td align="right">0.127</td>
 </tr>
 <tr class="even">
 <td align="left">ENS65</td>
-<td align="right">-0.023</td>
+<td align="right">-0.022</td>
 <td align="right">0.002</td>
-<td align="right">0.421</td>
+<td align="right">0.612</td>
 </tr>
 <tr class="odd">
 <td align="left">ENS327</td>
-<td align="right">-0.010</td>
-<td align="right">0.007</td>
-<td align="right">0.976</td>
+<td align="right">-0.011</td>
+<td align="right">0.005</td>
+<td align="right">0.875</td>
 </tr>
 <tr class="even">
 <td align="left">ENS239</td>
 <td align="right">0.014</td>
-<td align="right">0.008</td>
-<td align="right">0.976</td>
+<td align="right">0.007</td>
+<td align="right">0.900</td>
 </tr>
 <tr class="odd">
-<td align="left">ENS260</td>
-<td align="right">0.011</td>
-<td align="right">0.013</td>
-<td align="right">0.976</td>
-</tr>
-<tr class="even">
 <td align="left">ENS411</td>
 <td align="right">0.021</td>
 <td align="right">0.011</td>
-<td align="right">0.976</td>
-</tr>
-<tr class="odd">
-<td align="left">ENS458</td>
-<td align="right">0.015</td>
-<td align="right">0.021</td>
-<td align="right">0.976</td>
+<td align="right">0.975</td>
 </tr>
 <tr class="even">
-<td align="left">ENS219</td>
-<td align="right">0.013</td>
-<td align="right">0.023</td>
-<td align="right">0.976</td>
+<td align="left">ENS260</td>
+<td align="right">0.011</td>
+<td align="right">0.016</td>
+<td align="right">0.975</td>
 </tr>
 <tr class="odd">
-<td align="left">ENS107</td>
-<td align="right">0.007</td>
-<td align="right">0.022</td>
-<td align="right">0.976</td>
+<td align="left">ENS219</td>
+<td align="right">0.012</td>
+<td align="right">0.024</td>
+<td align="right">0.975</td>
 </tr>
 <tr class="even">
 <td align="left">ENS13</td>
 <td align="right">-0.022</td>
+<td align="right">0.022</td>
+<td align="right">0.975</td>
+</tr>
+<tr class="odd">
+<td align="left">ENS107</td>
+<td align="right">0.007</td>
 <td align="right">0.024</td>
-<td align="right">0.976</td>
+<td align="right">0.975</td>
+</tr>
+<tr class="even">
+<td align="left">ENS458</td>
+<td align="right">0.014</td>
+<td align="right">0.025</td>
+<td align="right">0.975</td>
 </tr>
 </tbody>
 </table></div>
