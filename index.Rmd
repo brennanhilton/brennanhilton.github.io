@@ -4,12 +4,10 @@ output:
   html_document
 ---
 <img src="images/iceland2crop.jpg" style="width:50%" ALIGN = "right">
-PhD Candidate <br />
-Environmental Health Sciences <br />
-Columbia University Mailman School of Public Health <br />
 
-###About
-How are the effects of environmental exposures transmitted across generations to impact the health of children? I employ methods in epidemiology, genomics, epigenetics, and molecular biology to answer this question.
+### About
+Postdoctoral scholar <br />
+Department of Environmental and Occupational Health Sciences, University of Washington <br />
+Center for Child Health, Behavior and Development, Seattle Children’s Research Institute <br />
 
-Before starting this work at Columbia, I received a BA/MA degree in Biology from Wesleyan University, where I researched the evolutionary implications of heritable, environmentally induced epigenetic changes in plants. [I showed that plant's may respond to a source of environmental stress by modifying their offspring in specific ways that increase evolutionary fitness under that stress.](https://royalsocietypublishing.org/doi/full/10.1098/rstb.2018.0182) Moreover, [environmentally induced DNA methylation changes were shown to medaite these changes in offspring development.](https://www.frontiersin.org/articles/10.3389/fpls.2018.01251/full) 
 

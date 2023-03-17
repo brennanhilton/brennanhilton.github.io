@@ -3,8 +3,10 @@ output_dir: "."
 navbar:
   title: "Brennan H. Baker"
   right:
-    - text: "Resume"
-      href: Resume.html
+    - text: "RNAseqCovarImpute"
+      href: Impute_Covariate_Data_in_RNA_sequencing_Studies.html
+    - text: "Example Data for RNAseqCovarImpute"
+      href: Example_Data_for_RNAseqCovarImpute.html
     - text: "Google Scholar"
       href: https://scholar.google.com/citations?user=K2-E4SEAAAAJ&hl=en&authuser=1
     - icon: fa-envelope fa-lg
