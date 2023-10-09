@@ -5,9 +5,18 @@ output:
 ---
 <img src="images/iceland2crop.jpg" style="width:50%" ALIGN = "right">
 
-### About
-Postdoctoral scholar <br />
+### Postdoctoral scholar (10/2022 - present)
 Department of Environmental and Occupational Health Sciences, University of Washington <br />
 Center for Child Health, Behavior and Development, Seattle Children’s Research Institute <br />
 
+### PhD in Environmental Health Sciences (2022)
+Columbia University, New York, NY
 
+### MA in Biology (2018)
+Wesleyan University, Middletown, CT  
+
+### BA in Biology (2017)
+Wesleyan University, Middletown, CT
+
+### About
+I am an environmental molecular epidemiologist investigating the links between prenatal exposures and children’s health and their underlying molecular mechanisms. 
