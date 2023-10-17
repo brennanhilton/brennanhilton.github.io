@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2023-05-11" />
+<meta name="date" content="2023-10-17" />
 
 <title>Example Data for RNAseqCovarImpute</title>
 
@@ -698,9 +698,9 @@ function toggle_visibility(id1) {
 <p class="author-name">Brennan H Baker<span class="affil-mark">1*</span></p>
 <p class="author-affiliation"><span class="affil-mark">1</span>University of Washington</p>
 <p class="author-email"><span class="affil-mark">*</span><a href="mailto:brennanhilton@gmail.com">brennanhilton@gmail.com</a></p>
-<h4 class="date">11 May 2023</h4>
+<h4 class="date">17 October 2023</h4>
 <h4 class="package">Package</h4>
-<p>RNAseqCovarImpute 0.99.0</p>
+<p>RNAseqCovarImpute 0.99.12</p>
 
 </div>
 
@@ -752,7 +752,7 @@ rownames(example_DGE) &lt;- annot$ENSEMBL</code></pre>
 <h1><span class="header-section-number">2</span> Simulate missingness in the random data</h1>
 <p>Now we simulate missingness in the random data generated above using the mice ampute function. The below code simulates missingness in the data for all but the first variable (x), which we consider the main predictor of interest in this example. See the ampute documentation for more details.</p>
 <pre class="r"><code># First get all combos of 0 or 1 for the 4 other variables (y, z, a, and b)
-pattern_vars &lt;- expand.grid(c(0,1), c(0,1), c(0,1), c(0,1))
+pattern_vars &lt;- expand.grid(c(0, 1), c(0, 1), c(0, 1), c(0, 1))
 # Then add back a column for the predictor of interest, which is never amputed, so the first col =1 the whole way down
 pattern2 &lt;- matrix(1, nrow = nrow(pattern_vars), ncol = 1)
 pattern1 &lt;- cbind(pattern2, pattern_vars)
@@ -892,18 +892,18 @@ sample_size &lt;- example_data %&gt;%
 ## [5] stringr_1.5.0    dplyr_1.1.0      BiocStyle_2.27.1
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] jsonlite_1.8.4      compiler_4.3.0      BiocManager_1.30.20
+##  [1] jsonlite_1.8.7      compiler_4.3.0      BiocManager_1.30.20
 ##  [4] Rcpp_1.0.10         tidyselect_1.2.0    jquerylib_0.1.4    
 ##  [7] yaml_2.3.7          fastmap_1.1.1       lattice_0.20-45    
-## [10] R6_2.5.1            generics_0.1.3      knitr_1.42         
+## [10] R6_2.5.1            generics_0.1.3      knitr_1.43         
 ## [13] backports_1.4.1     tibble_3.2.0        bookdown_0.33      
-## [16] bslib_0.4.2         pillar_1.8.1        rlang_1.0.6        
-## [19] utf8_1.2.3          broom_1.0.3         cachem_1.0.7       
-## [22] stringi_1.7.12      xfun_0.37           sass_0.4.5         
+## [16] bslib_0.4.2         pillar_1.9.0        rlang_1.1.1        
+## [19] utf8_1.2.3          broom_1.0.5         cachem_1.0.7       
+## [22] stringi_1.7.12      xfun_0.39           sass_0.4.5         
 ## [25] cli_3.6.0           withr_2.5.0         magrittr_2.0.3     
 ## [28] grid_4.3.0          digest_0.6.31       locfit_1.5-9.7     
 ## [31] rstudioapi_0.14     lifecycle_1.0.3     vctrs_0.5.2        
-## [34] evaluate_0.20       glue_1.6.2          fansi_1.0.4        
+## [34] evaluate_0.21       glue_1.6.2          fansi_1.0.4        
 ## [37] rmarkdown_2.20      purrr_1.0.1         tools_4.3.0        
 ## [40] pkgconfig_2.0.3     htmltools_0.5.4</code></pre>
 </div>

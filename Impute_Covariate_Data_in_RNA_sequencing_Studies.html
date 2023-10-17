@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2023-10-06" />
+<meta name="date" content="2023-10-17" />
 
 <title>Impute Covariate Data in RNA-sequencing Studies</title>
 
@@ -698,9 +698,9 @@ function toggle_visibility(id1) {
 <p class="author-name">Brennan H Baker<span class="affil-mark">1*</span></p>
 <p class="author-affiliation"><span class="affil-mark">1</span>University of Washington</p>
 <p class="author-email"><span class="affil-mark">*</span><a href="mailto:brennanhilton@gmail.com">brennanhilton@gmail.com</a></p>
-<h4 class="date">6 October 2023</h4>
+<h4 class="date">17 October 2023</h4>
 <h4 class="package">Package</h4>
-<p>RNAseqCovarImpute 0.99.10</p>
+<p>RNAseqCovarImpute 0.99.12</p>
 
 </div>
 
@@ -1501,52 +1501,201 @@ example_DGE &lt;- example_DGE[annot, ]</code></pre>
 </div>
 <div id="estimate-gene-expression-changes-using-voom-followed-by-lmfit-functions-separately-on-each-m-imputed-dataset-within-each-gene-bin" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Estimate gene expression changes using voom followed by lmFit functions, separately on each M imputed dataset within each gene bin</h2>
-<p>The <code>limmavoom_imputed_data_list</code> function loops through the imputed data list (output from <code>impute_by_gene_bin</code> function) and runs RNA-seq analysis with the limma-voom pipeline. Users specify the formula for the RNA-seq design matrix and the main predictor of interest for which log fold-changes will be estimated. This procedure can also be run with a different parallel back-end or in serial using the <code>BPPARAM</code> argument as above.</p>
+<p>The <code>limmavoom_imputed_data_list</code> function loops through the imputed data list (output from <code>impute_by_gene_bin</code> function) and runs RNA-seq analysis with the limma-voom pipeline. Users specify the formula for the RNA-seq design matrix for which log fold-changes will be estimated. This procedure can also be run with a different parallel back-end or in serial using the <code>BPPARAM</code> argument as above.</p>
 <pre class="r"><code>coef_se &lt;- limmavoom_imputed_data_list(
     gene_intervals = intervals,
     DGE = example_DGE,
     imputed_data_list = gene_bin_impute,
     m = 3,
-    voom_formula = &quot;~x + y + z + a + b&quot;,
-    predictor = &quot;x&quot;
+    voom_formula = &quot;~x + y + z + a + b&quot;
 )</code></pre>
 <pre><code>## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
-## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
 ## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
 ## 
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
 ## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## 
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
+## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`
 ## Joining with `by = join_by(probe)`</code></pre>
 </div>
 <div id="apply-variance-shrinking-bayesian-procedure-pooling-results-with-rubins-rules-and-fdr-adjust-p-values" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Apply variance shrinking Bayesian procedure, pooling results with Rubins’ rules, and FDR-adjust P-values</h2>
-<p>The final step is to combine the results from each imputed dataset using Rubin’s rules. The argument “model_results” is the output from the <code>limmavoom_imputed_data_list</code> function above. The <code>combine_rubins</code> function applies the <code>squeezeVar</code> function before pooling results. The result is a table with one row per gene. The table includes coefficients (e.g., logFC values) standard errors, degrees of freedom, t-statistics, P-Values, and adjusted P-values from the limma-voom pipeline. Both the raw and empirical Bayes moderated statistics are reported.</p>
+<p>The final step is to combine the results from each imputed dataset using Rubin’s rules. The argument “model_results” is the output from the <code>limmavoom_imputed_data_list</code> function above. The <code>combine_rubins</code> function applies the <code>squeezeVar</code> function before pooling results. The result is a table with one row per gene. The table includes coefficients (e.g., logFC values) standard errors, degrees of freedom, t-statistics, P-Values, and adjusted P-values from the limma-voom pipeline. Both the raw and empirical Bayes moderated statistics are reported. The user selects the predictor of interest in the form of a linear model contrast for which model results will be extracted. For a continuous variable this is just the predictor name. For a categorical variable like <code>b</code> in <code>example_data</code> we could specify <code>predictor = b1</code> to get the effect of being in the b = 1 versus the b = 0 group.</p>
 <pre class="r"><code>final_res &lt;- combine_rubins(
     DGE = example_DGE,
     model_results = coef_se,
-    voom_formula = &quot;~x + y + z + a + b&quot;
+    predictor = &quot;x&quot;
 )</code></pre>
 <div class='horizontal-scroll'><table>
 <caption><span id="tab:unnamed-chunk-10">Table 2: </span><span class="caption-title">The top 10 genes associated with predictor x sorted by lowest P-value</caption></span><br>
@@ -1563,61 +1712,61 @@ example_DGE &lt;- example_DGE[annot, ]</code></pre>
 <td align="left">ENS432</td>
 <td align="right">-0.021</td>
 <td align="right">0.000</td>
-<td align="right">0.106</td>
+<td align="right">0.096</td>
 </tr>
 <tr class="even">
 <td align="left">ENS65</td>
 <td align="right">-0.023</td>
-<td align="right">0.002</td>
-<td align="right">0.384</td>
+<td align="right">0.001</td>
+<td align="right">0.343</td>
 </tr>
 <tr class="odd">
 <td align="left">ENS327</td>
-<td align="right">-0.011</td>
+<td align="right">-0.010</td>
 <td align="right">0.006</td>
-<td align="right">0.945</td>
+<td align="right">0.932</td>
 </tr>
 <tr class="even">
 <td align="left">ENS239</td>
-<td align="right">0.014</td>
-<td align="right">0.008</td>
-<td align="right">0.984</td>
+<td align="right">0.015</td>
+<td align="right">0.007</td>
+<td align="right">0.932</td>
 </tr>
 <tr class="odd">
 <td align="left">ENS411</td>
-<td align="right">0.021</td>
-<td align="right">0.012</td>
-<td align="right">0.989</td>
+<td align="right">0.022</td>
+<td align="right">0.011</td>
+<td align="right">0.982</td>
 </tr>
 <tr class="even">
 <td align="left">ENS260</td>
 <td align="right">0.011</td>
-<td align="right">0.014</td>
-<td align="right">0.989</td>
+<td align="right">0.012</td>
+<td align="right">0.982</td>
 </tr>
 <tr class="odd">
-<td align="left">ENS458</td>
-<td align="right">0.015</td>
+<td align="left">ENS107</td>
+<td align="right">0.007</td>
 <td align="right">0.022</td>
-<td align="right">0.989</td>
+<td align="right">0.982</td>
 </tr>
 <tr class="even">
-<td align="left">ENS291</td>
-<td align="right">0.017</td>
-<td align="right">0.022</td>
-<td align="right">0.989</td>
-</tr>
-<tr class="odd">
 <td align="left">ENS219</td>
 <td align="right">0.012</td>
 <td align="right">0.023</td>
-<td align="right">0.989</td>
+<td align="right">0.982</td>
+</tr>
+<tr class="odd">
+<td align="left">ENS291</td>
+<td align="right">0.017</td>
+<td align="right">0.024</td>
+<td align="right">0.982</td>
 </tr>
 <tr class="even">
-<td align="left">ENS107</td>
-<td align="right">0.007</td>
-<td align="right">0.023</td>
-<td align="right">0.989</td>
+<td align="left">ENS13</td>
+<td align="right">-0.022</td>
+<td align="right">0.027</td>
+<td align="right">0.982</td>
 </tr>
 </tbody>
 </table></div>
@@ -1647,7 +1796,7 @@ example_DGE &lt;- example_DGE[annot, ]</code></pre>
 ## 
 ## other attached packages:
 ## [1] BiocParallel_1.33.9       dplyr_1.1.0              
-## [3] RNAseqCovarImpute_0.99.10 BiocStyle_2.27.1         
+## [3] RNAseqCovarImpute_0.99.12 BiocStyle_2.27.1         
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] limma_3.55.5        jsonlite_1.8.7      compiler_4.3.0     
